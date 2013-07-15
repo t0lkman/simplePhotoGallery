@@ -32,6 +32,9 @@
 	function makeQuery(e){
 		//on each change reset the index counter
 		imageIndex = 0;
+		// hide left arrow on each change, since counter reset
+		leftArrow.className = 'nLeft hide';
+
 		if(e.target.value !== 'default'){
 			httpRequest.open('GET', url + e.currentTarget.value , true);
 			httpRequest.send(null);
