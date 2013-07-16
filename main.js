@@ -73,9 +73,13 @@
 				imgDiv.className = '';
 				if(imageIndex === fetchedData.length){ // hide next button if reached the end
 					rightArrow.className = 'nRight hide';
+					imgTag.style.cursor = 'default';
+					imgDiv.removeEventListener('click', goNext, false);
 				}
 				else{
-					rightArrow.className = 'nRight';	
+					rightArrow.className = 'nRight';
+					imgTag.style.cursor = 'pointer';
+					imgDiv.addEventListener('click', goNext, false);
 				}
 			}
 	}
